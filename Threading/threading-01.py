@@ -1,4 +1,5 @@
 import time
+import threading
 
 time_start = time.time()
 
@@ -35,14 +36,26 @@ def func_symbols(symbols, color):
         default_color = "\033[0m{}"
         print(selected_color.format(symbol), default_color.format(""))
 
-func_symbols(heart, "red")
-func_symbols(rhomb, "green")
-func_symbols(sun, "blue")
-func_symbols(heart, "white")
-func_symbols(square, "purple")
-func_symbols(sun, "red")
-func_symbols(rectangles, "yellow")
-func_symbols(rhomb, "turquoise")
+
+threading_1 = threading.Thread(target=func_symbols, args=(heart, "red"))
+threading_2 = threading.Thread(target=func_symbols, args=(rhomb, "green"))
+threading_3 = threading.Thread(target=func_symbols, args=(sun, "blue"))
+threading_4 = threading.Thread(target=func_symbols, args=(heart, "white"))
+threading_5 = threading.Thread(target=func_symbols, args=(square, "purple"))
+threading_6 = threading.Thread(target=func_symbols, args=(sun, "red"))
+threading_7 = threading.Thread(target=func_symbols, args=(rectangles, "yellow"))
+threading_8 = threading.Thread(target=func_symbols, args=(rhomb, "turquoise"))
+
+
+threading_1.start()
+threading_2.start()
+threading_3.start()
+threading_4.start()
+threading_5.start()
+threading_6.start()
+threading_7.start()
+threading_8.start()
+
 
 time_finish = time.time()
 
