@@ -46,7 +46,6 @@ threading_6 = threading.Thread(target=func_symbols, args=(sun, "red"))
 threading_7 = threading.Thread(target=func_symbols, args=(rectangles, "yellow"))
 threading_8 = threading.Thread(target=func_symbols, args=(rhomb, "turquoise"))
 
-
 threading_1.start()
 threading_2.start()
 threading_3.start()
@@ -56,6 +55,14 @@ threading_6.start()
 threading_7.start()
 threading_8.start()
 
+threading_1.join()
+threading_2.join()
+threading_3.join()
+threading_4.join()
+threading_5.join()
+threading_6.join()
+threading_7.join()
+threading_8.join()
 
 time_finish = time.time()
 
