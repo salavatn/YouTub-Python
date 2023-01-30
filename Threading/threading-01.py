@@ -34,17 +34,18 @@ def func_symbols(symbols, color):
         time.sleep(0.1)
         selected_color = func_colors(color)
         default_color = "\033[0m{}"
-        print(selected_color.format(symbol), default_color.format(""))
+        thread_name = threading.current_thread().name
+        print(thread_name, selected_color.format(symbol), default_color.format(""))
 
 
-threading_1 = threading.Thread(target=func_symbols, args=(heart, "red"))
-threading_2 = threading.Thread(target=func_symbols, args=(rhomb, "green"))
-threading_3 = threading.Thread(target=func_symbols, args=(sun, "blue"))
-threading_4 = threading.Thread(target=func_symbols, args=(heart, "white"))
-threading_5 = threading.Thread(target=func_symbols, args=(square, "purple"))
-threading_6 = threading.Thread(target=func_symbols, args=(sun, "red"))
-threading_7 = threading.Thread(target=func_symbols, args=(rectangles, "yellow"))
-threading_8 = threading.Thread(target=func_symbols, args=(rhomb, "turquoise"))
+threading_1 = threading.Thread(target=func_symbols, args=(heart, "red"), name="Thread [1       ]\t")
+threading_2 = threading.Thread(target=func_symbols, args=(rhomb, "green"), name="Thread [ 2      ]\t")
+threading_3 = threading.Thread(target=func_symbols, args=(sun, "blue"), name="Thread [  3     ]\t")
+threading_4 = threading.Thread(target=func_symbols, args=(heart, "white"), name="Thread [   4    ]\t")
+threading_5 = threading.Thread(target=func_symbols, args=(square, "purple"), name="Thread [    5   ]\t")
+threading_6 = threading.Thread(target=func_symbols, args=(sun, "red"), name="Thread [     6  ]\t")
+threading_7 = threading.Thread(target=func_symbols, args=(rectangles, "yellow"), name="Thread [      7 ]\t")
+threading_8 = threading.Thread(target=func_symbols, args=(rhomb, "turquoise"), name="Thread [       8]\t")
 
 threading_1.start()
 threading_2.start()
