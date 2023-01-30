@@ -30,4 +30,12 @@ def func_symbols(symbols, color):
         default_color = "\033[0m{}"
         print(selected_color.format(symbol), default_color.format(""))
 
+
 func_symbols(heart, "red")
+func_symbols(rhomb, "green")
+func_symbols(sun, "blue")
+func_symbols(heart, "white")
+func_symbols(square, "purple")
+func_symbols(sun, "red")
+func_symbols(rectangles, "yellow")
+func_symbols(rhomb, "turquoise")
